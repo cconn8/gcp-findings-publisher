@@ -8,3 +8,12 @@
 3. Deploy a cloud function that subscribes to the Pub/Sub findings topic and trigger a "jira" clound function to Create/Update tickets when notifications are received
 
 
+#### Update logs
+- The cloud function entry point "format_finding" parses the finding response to extract data of value
+- Based on the data, it generates tickets in the required JIRA project (PROJECT MAPPING dict is deprecated)
+- Tickets are created per finding
+
+
+#### To-Do
+- Group tickets by finding (ie. vulnerability)
+- Implement a jira search function to check for previously created tickets and add the new vulns to that 
